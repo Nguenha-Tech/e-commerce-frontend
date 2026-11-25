@@ -5,7 +5,8 @@
 const overrides = (typeof window !== 'undefined' && window.__ELECTRO_CONFIG__) || {};
 
 export const CONFIG = Object.freeze({
-  API_BASE_URL: 'http://localhost:3333/api/v1',
+  // Backend publicado na Vercel. Para usar o backend local: 'http://localhost:3333/api/v1'
+  API_BASE_URL: 'https://shopping-khaki-chi.vercel.app/api/v1',
   STORE_NAME: 'Electro Shop',
   STORE_CURRENCY: 'MZN',
   STORE_LOCALE: 'pt-MZ',
