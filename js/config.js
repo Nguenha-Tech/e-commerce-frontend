@@ -4,9 +4,18 @@
  */
 const overrides = (typeof window !== 'undefined' && window.__ELECTRO_CONFIG__) || {};
 
+/** Backend publicado na Vercel. Para usar o backend local: 'http://localhost:3333/api/v1'. */
+const REMOTE_API = 'https://shopping-khaki-chi.vercel.app/api/v1';
+
+/**
+ * Em desenvolvimento (localhost) a API é chamada diretamente (cross-origin, precisa de CORS).
+ * Publicado, usa o proxy do vercel.json (/api/* → backend): mesmo domínio, sem CORS e com
+ * cookies de sessão first-party (funcionam também no Safari / modo anónimo).
+ */
+const isLocal = typeof location !== 'undefined' && ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+
 export const CONFIG = Object.freeze({
-  // Backend publicado na Vercel. Para usar o backend local: 'http://localhost:3333/api/v1'
-  API_BASE_URL: 'https://shopping-khaki-chi.vercel.app/api/v1',
+  API_BASE_URL: isLocal ? REMOTE_API : '/api/v1',
   STORE_NAME: 'Electro Shop',
   STORE_CURRENCY: 'MZN',
   STORE_LOCALE: 'pt-MZ',

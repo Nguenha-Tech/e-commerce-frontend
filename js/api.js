@@ -41,7 +41,8 @@ function friendlyMessage(status, code, details) {
 }
 
 function buildUrl(path, query) {
-  const url = new URL(CONFIG.API_BASE_URL.replace(/\/$/, '') + path);
+  // Base relativa ('/api/v1', via proxy da Vercel) resolve contra a origem da página.
+  const url = new URL(CONFIG.API_BASE_URL.replace(/\/$/, '') + path, location.origin);
   if (query) {
     for (const [k, v] of Object.entries(query)) {
       if (v === undefined || v === null || v === '') continue;
