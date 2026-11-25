@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar · Electro Shop</title>
+  <meta name="description" content="Entrar na Electro Shop.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#2547d0">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/account.css">
+</head>
+<body data-wa-source="SUPPORT" data-auth="login">
+  <header id="site-header"></header>
+  <main id="main" tabindex="-1">
+    <div class="container auth">
+      <section class="auth__card panel" id="auth-card" aria-labelledby="auth-title">
+        <h1 id="auth-title">Entrar</h1>
+        <p class="muted">Acompanhe pedidos, guarde favoritos e compre mais depressa.</p>
+        <form id="auth-form" method="post" novalidate>
+          <div class="form-error" role="alert" tabindex="-1"></div>
+          <div class="field"><label for="email">Email</label><input class="input" id="email" name="email" type="email" required autocomplete="email" inputmode="email"></div>
+        <div class="field"><label for="password">Password</label>
+          <div class="pw"><input class="input" id="password" name="password" type="password" required autocomplete="current-password" maxlength="128"><button class="link-btn pw__toggle" type="button" data-toggle-pw="password" aria-pressed="false" aria-label="Mostrar password">Mostrar</button></div></div>
+          <p class="auth__aside"><a href="forgot-password.html">Esqueci a password</a></p>
+          <button class="btn btn--primary btn--block btn--lg" type="submit" disabled data-needs-js>Entrar</button>
+        </form>
+        <p class="auth__switch">Ainda não tem conta? <a href="register.html">Criar conta</a></p>
+      </section>
+    </div>
+  </main>
+  <footer id="site-footer"></footer>
+  <noscript><p class="container">Esta loja precisa de JavaScript ativo.</p></noscript>
+  <script type="module" src="js/pages/auth.js"></script>
+</body>
+</html>

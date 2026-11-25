@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Produtos · Electro Shop</title>
+  <meta name="description" content="Pesquise, filtre e compare produtos eletrónicos.">
+  <meta name="theme-color" content="#2547d0">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/shop.css">
+</head>
+<body data-wa-source="HOMEPAGE">
+  <header id="site-header"></header>
+  <main id="main" tabindex="-1">
+    <div class="container">
+      <nav class="crumbs" id="crumbs" aria-label="Caminho"></nav>
+      <div class="page-head shop-head">
+        <h1 id="shop-title">Produtos</h1>
+      </div>
+      <div class="shop">
+        <aside class="shop__filters" id="filter-drawer" aria-label="Filtros" aria-hidden="false">
+          <div class="shop__filters-backdrop" data-filter-close></div>
+          <div class="shop__filters-panel">
+            <div class="shop__filters-head"><h2>Filtros</h2><button class="icon-btn" type="button" data-filter-close aria-label="Fechar filtros">✕</button></div>
+            <div class="shop__filters-body filters" data-filters></div>
+            <div class="shop__filters-foot"><button class="btn btn--primary btn--block" type="button" data-filter-close>Ver resultados</button></div>
+          </div>
+        </aside>
+        <section class="shop__results" aria-labelledby="shop-title">
+          <div class="toolbar">
+            <button class="btn btn--sm toolbar__filters" type="button" id="open-filters" aria-controls="filter-drawer">☰ Filtros <span class="badge badge--info" id="filter-count"></span></button>
+            <p class="toolbar__count" id="result-count" aria-live="polite"></p>
+            <label class="toolbar__sort"><span>Ordenar por</span><select class="select" id="sort"></select></label>
+          </div>
+          <div class="active-filters" id="active-filters"></div>
+          <div id="results"></div>
+          <div id="pager"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer id="site-footer"></footer>
+  <noscript><p class="container">Esta loja precisa de JavaScript ativo.</p></noscript>
+  <script type="module" src="js/pages/shop.js"></script>
+</body>
+</html>
